@@ -137,7 +137,7 @@ h2 { margin: 0; color: #34333b; font-family: Manrope, sans-serif; font-size: 15p
 .note-category { display: flex; align-items: center; gap: 6px; min-width: 0; overflow: hidden; color: #9b99a2; font-size: 7px; font-weight: 700; letter-spacing: .65px; text-overflow: ellipsis; white-space: nowrap; }
 .card-menu { flex: 0 0 auto; padding: 0 1px; font-size: 13px; }
 .note-card h3 { margin: 13px 0 7px; overflow: hidden; color: #45434d; font-family: Manrope, sans-serif; font-size: 12px; line-height: 1.4; font-weight: 700; letter-spacing: -.2px; text-overflow: ellipsis; white-space: nowrap; }
-.note-card > p { display: -webkit-box; margin: 0; overflow: hidden; color: #93919b; font-size: 9px; line-height: 1.65; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; }
+.note-card > p { display: -webkit-box; margin: 0; overflow: hidden; color: #93919b; font-size: 9px; line-height: 1.65; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 .note-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: auto; padding-top: 12px; color: #aaa8b0; font-size: 8px; }
 .note-type { display: flex; align-items: center; gap: 4px; }
 .note-type svg { width: 12px; height: 12px; }
