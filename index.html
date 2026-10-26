@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ruang belajar pribadi untuk merapikan catatan dan tugas kuliah."
+    />
+    <title>Ruang Kuliah — Ruang belajar pribadimu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navigasi utama">
+        <a class="brand" href="#" aria-label="Ruang Kuliah, beranda">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M8 7.5h12.5A3.5 3.5 0 0 1 24 11v14H11.5A3.5 3.5 0 0 1 8 21.5v-14Z" fill="currentColor" opacity=".16" />
+              <path d="M8 7.5h12.5A3.5 3.5 0 0 1 24 11v14H11.5A3.5 3.5 0 0 1 8 21.5v-14ZM8 8v13.5A3.5 3.5 0 0 0 11.5 25H24M12 12h8M12 16h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span>ruang<span class="brand-light">kuliah</span></span>
+        </a>
+
+        <button class="new-note-button" id="new-note-button">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" /></svg>
+          Catatan baru
+        </button>
+
+        <nav class="primary-nav">
+          <p class="nav-label">MENU</p>
+          <button class="nav-item active" data-view="Beranda">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m3 9 7-6 7 6v7a1 1 0 0 1-1 1h-4v-5H8v5H4a1 1 0 0 1-1-1V9Z" /></svg>
+            Beranda
+          </button>
+          <button class="nav-item" data-view="Semua catatan">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3.5h8l3 3V16a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1Z" /><path d="M12.5 3.5v3h3M7 10h6M7 13h6" /></svg>
+            Semua catatan
+            <span class="nav-count" id="note-count">6</span>
+          </button>
+          <button class="nav-item" data-view="Daftar tugas">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 3.5 3.5L16 5" /><path d="M16 10v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7" /></svg>
+            Daftar tugas
+            <span class="nav-count task-count">3</span>
+          </button>
+
+          <div class="nav-divider"></div>
+          <div class="subjects-heading">
+            <p class="nav-label">MATA KULIAH</p>
+            <button class="icon-button small-icon" id="add-subject" aria-label="Tambah mata kuliah" title="Tambah mata kuliah">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" /></svg>
+            </button>
+          </div>
+          <button class="nav-item subject-item" data-subject="Semua">
+            <span class="subject-dot dot-lilac"></span> Semua mata kuliah
+          </button>
+          <button class="nav-item subject-item" data-subject="Interaksi Manusia & Komputer">
+            <span class="subject-dot dot-blue"></span> Interaksi Manusia & Komputer
+          </button>
+          <button class="nav-item subject-item" data-subject="Basis Data">
+            <span class="subject-dot dot-orange"></span> Basis Data
+          </button>
+          <button class="nav-item subject-item" data-subject="Pemrograman Web">
+            <span class="subject-dot dot-green"></span> Pemrograman Web
+          </button>
+          <button class="nav-item subject-item" data-subject="Metode Penelitian">
+            <span class="subject-dot dot-pink"></span> Metode Penelitian
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="semester-card">
+            <div class="semester-icon">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6.5 10 3l7 3.5-7 3.5-7-3.5ZM5 8v5l5 3 5-3V8M17 7v5" /></svg>
+            </div>
+            <div>
+              <span class="semester-caption">SEMESTER AKTIF</span>
+              <strong>Semester 4</strong>
+            </div>
+            <button class="icon-button more-button" aria-label="Pengaturan semester">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="10" r="1" fill="currentColor" stroke="none" /><circle cx="10" cy="10" r="1" fill="currentColor" stroke="none" /><circle cx="16" cy="10" r="1" fill="currentColor" stroke="none" /></svg>
+            </button>
+          </div>
+          <button class="profile-button">
+            <span class="avatar">NA</span>
+            <span class="profile-copy"><strong>Daffasyah</strong><small>Mahasiswa</small></span>
+            <svg class="profile-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4" /></svg>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb"><span>Ruang belajar</span><span class="breadcrumb-slash">/</span><strong id="current-view">Beranda</strong></div>
+          <div class="topbar-actions">
+            <label class="search-box">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.8" cy="8.8" r="5.8" /><path d="m13 13 4 4" /></svg>
+              <input id="search-input" type="search" placeholder="Cari catatan..." aria-label="Cari catatan" />
+              <kbd>⌘ K</kbd>
+            </label>
+            <button class="icon-button notification-button" aria-label="Notifikasi">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 8.5a5.5 5.5 0 0 0-11 0c0 6-2 6-2 7.5h15c0-1.5-2-1.5-2-7.5ZM8 18h4" /></svg>
+              <span class="notification-dot"></span>
+            </button>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="welcome-section">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-dot"></span> SENIN, 19 OKTOBER 2026</p>
+              <h1>Allooo <span class="wave" aria-hidden="true">✳</span></h1>
+              <p class="welcome-subtitle">Pelan-pelan saja, satu hal dalam satu waktu.</p>
+            </div>
+            <button class="primary-button" id="new-task-button">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12" /></svg>
+              Tambah tugas
+            </button>
+          </section>
+
+          <section class="focus-card" aria-label="Pesan penyemangat">
+            <div class="focus-mark" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M20 3.5 23.7 15l11.8-3.2-7 10 9.3 7-12.2.6L20 40l-5.6-10.6-12.2-.6 9.3-7-7-10L16.3 15 20 3.5Z" fill="currentColor" opacity=".18"/><path d="m20 9 2.7 8.3 8.5-2.3-5 7.2 6.7 5-8.8.4L20 35l-4-7.6-8.8-.4 6.7-5-5-7.2 8.5 2.3L20 9Z" fill="currentColor"/></svg>
+            </div>
+            <div class="focus-copy">
+              <span>RUANG KECIL UNTUK HARI INI</span>
+              <p>“Kemajuan kecil tetaplah kemajuan. Kamu sedang melakukannya dengan baik.”</p>
+            </div>
+            <div class="focus-decoration" aria-hidden="true"></div>
+          </section>
+
+          <section class="task-section">
+            <div class="section-heading">
+              <div>
+                <div class="title-with-icon">
+                  <span class="heading-icon task-heading-icon">
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 3.5 3.5L16 5" /><path d="M16 10v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7" /></svg>
+                  </span>
+                  <h2>Tugas mendatang</h2>
+                  <span class="heading-count">3</span>
+                </div>
+                <p class="section-subtitle">Yang perlu kamu perhatikan minggu ini</p>
+              </div>
+              <button class="text-button" data-view-link="Daftar tugas">Lihat semua <span aria-hidden="true">↗</span></button>
+            </div>
+            <div class="task-list" id="task-list">
+              <article class="task-row" data-task>
+                <button class="check-button" aria-label="Tandai tugas selesai"></button>
+                <div class="task-copy">
+                  <strong>Wireframe aplikasi mobile</strong>
+                  <span><i class="mini-dot dot-blue"></i> Interaksi Manusia & Komputer</span>
+                </div>
+                <span class="due-date due-today">Hari ini <b>·</b> 23:59</span>
+                <button class="row-more" aria-label="Opsi tugas">···</button>
+              </article>
+              <article class="task-row" data-task>
+                <button class="check-button" aria-label="Tandai tugas selesai"></button>
+                <div class="task-copy">
+                  <strong>Normalisasi database hingga 3NF</strong>
+                  <span><i class="mini-dot dot-orange"></i> Basis Data</span>
+                </div>
+                <span class="due-date">Besok <b>·</b> 10:00</span>
+                <button class="row-more" aria-label="Opsi tugas">···</button>
+              </article>
+              <article class="task-row" data-task>
+                <button class="check-button" aria-label="Tandai tugas selesai"></button>
+                <div class="task-copy">
+                  <strong>Review materi JavaScript async</strong>
+                  <span><i class="mini-dot dot-green"></i> Pemrograman Web</span>
+                </div>
+                <span class="due-date">Rab, 21 Okt</span>
+                <button class="row-more" aria-label="Opsi tugas">···</button>
+              </article>
+            </div>
+          </section>
+
+          <section class="notes-section">
+            <div class="section-heading notes-heading">
+              <div>
+                <div class="title-with-icon">
+                  <span class="heading-icon note-heading-icon">
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3.5h8l3 3V16a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1Z" /><path d="M12.5 3.5v3h3M7 10h6M7 13h6" /></svg>
+                  </span>
+                  <h2>Catatan terbaru</h2>
+                </div>
+                <p class="section-subtitle">Pikiran dan materi yang kamu simpan</p>
+              </div>
+              <button class="text-button" data-view-link="Semua catatan">Semua catatan <span aria-hidden="true">↗</span></button>
+            </div>
+            <div class="notes-grid" id="notes-grid">
+              <article class="note-card note-lilac" data-note data-subject="Interaksi Manusia & Komputer">
+                <div class="note-card-top"><span class="note-category"><i class="mini-dot dot-blue"></i> INTERAKSI MANUSIA & KOMPUTER</span><button class="card-menu" aria-label="Opsi catatan">···</button></div>
+                <h3>Prinsip dasar usability</h3>
+                <p>Efektivitas, efisiensi, dan kepuasan pengguna. Ingat: desain yang baik terasa sederhana karena kerumitannya...</p>
+                <div class="note-card-footer"><span>18 Okt 2026</span><span class="note-type"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h6l2 2v9H4zM9.5 2.5v2h2M6 8h4M6 10.5h4" /></svg> Catatan kuliah</span></div>
+              </article>
+              <article class="note-card note-peach" data-note data-subject="Basis Data">
+                <div class="note-card-top"><span class="note-category"><i class="mini-dot dot-orange"></i> BASIS DATA</span><button class="card-menu" aria-label="Opsi catatan">···</button></div>
+                <h3>Normalisasi & bentuk normal</h3>
+                <p>1NF: nilai harus atomik. 2NF: tidak ada partial dependency. 3NF: tidak ada transitive dependency...</p>
+                <div class="note-card-footer"><span>16 Okt 2026</span><span class="note-type"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h6l2 2v9H4zM9.5 2.5v2h2M6 8h4M6 10.5h4" /></svg> Catatan kuliah</span></div>
+              </article>
+              <article class="note-card note-mint" data-note data-subject="Pemrograman Web">
+                <div class="note-card-top"><span class="note-category"><i class="mini-dot dot-green"></i> PEMROGRAMAN WEB</span><button class="card-menu" aria-label="Opsi catatan">···</button></div>
+                <h3>Async / await di JavaScript</h3>
+                <p>Async function selalu mengembalikan Promise. Gunakan await untuk menunggu hasil tanpa membuat callback...</p>
+                <div class="note-card-footer"><span>14 Okt 2026</span><span class="note-type"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5h6l2 2v9H4zM9.5 2.5v2h2M6 8h4M6 10.5h4" /></svg> Catatan kuliah</span></div>
+              </article>
+            </div>
+            <p class="empty-search" id="empty-search" hidden>Belum ada catatan yang cocok dengan pencarianmu.</p>
+          </section>
+        </div>
+      </main>
+
+      <aside class="assistant-panel" aria-label="Asisten belajar">
+        <div class="assistant-header">
+          <div class="assistant-title">
+            <span class="assistant-orb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z" /></svg></span>
+            <div><strong>Teman belajar</strong><span>Asisten AI</span></div>
+          </div>
+          <span class="soon-pill"><i></i> SEGERA HADIR</span>
+        </div>
+
+        <div class="assistant-body">
+          <div class="assistant-illustration">
+            <div class="illustration-circle">
+              <span class="sparkle sparkle-one">✳</span>
+              <span class="sparkle sparkle-two">✦</span>
+              <div class="book-illustration">
+                <div class="book-page page-left"></div>
+                <div class="book-page page-right"></div>
+                <span class="book-star">✦</span>
+              </div>
+              <span class="illustration-orbit orbit-one"></span>
+              <span class="illustration-orbit orbit-two"></span>
+            </div>
+          </div>
+          <h2>Belajar lebih ringan,<br />bareng AI.</h2>
+          <p>Teman belajarmu sedang disiapkan. Nantinya, kamu bisa bertanya dan memahami materi dari catatan kuliahmu.</p>
+
+          <div class="assistant-feature-list">
+            <div><span class="feature-check">✓</span><span>Ringkas materi kuliah</span></div>
+            <div><span class="feature-check">✓</span><span>Jelaskan konsep yang sulit</span></div>
+            <div><span class="feature-check">✓</span><span>Bantu persiapan ujian</span></div>
+          </div>
+          <div class="assistant-preview">
+            <span class="preview-label">CONTOH PERTANYAAN</span>
+            <p>“Jelaskan normalisasi database dengan contoh sederhana...”</p>
+            <button aria-label="Kirim pertanyaan" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m3 10 14-7-4 14-3-6-7-1Z" /><path d="m10 11 4-4" /></svg></button>
+          </div>
+        </div>
+        <div class="assistant-footer"><span class="status-pulse"></span> Siap menemanimu belajar nanti</div>
+      </aside>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
